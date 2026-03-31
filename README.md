@@ -10,7 +10,7 @@ Em andamento
 
 ## 🎨 Design
 
-Em andamento
+Prototipação: https://stitch.withgoogle.com/projects/16388493866835475235
 
 ## 🌐 Site em Produção - GitHub Pages
 
