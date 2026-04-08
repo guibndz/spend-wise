@@ -2,7 +2,7 @@
 
 ### **Autor:** Guilherme Bondezan Gastaldo
 
-Este projeto tem como objetivo implementar uma aplicação web responsiva para o gerenciamento de finanças pessoais. O SpendWise permite ao usuário registrar entradas (receitas) e saídas (despesas), visualizar o saldo atualizado e acompanhar o histórico de transações de forma intuitiva.
+Este projeto tem como objetivo implementar uma aplicação web responsiva para o gerenciamento de finanças pessoais. O SpendWise permite ao usuário registrar entradas (receitas) e saídas (despesas), categorizá-las e visualizar seu saldo atual.
 
 ## 📚 Documentação do Projeto
 
@@ -18,7 +18,8 @@ Em Andamento
 
 ## 💻 Tecnologias e Dependências
 
-Em andamento 
+- Framework CSS: Bootstrap
+- API Pública: AwesomeAPI
 
 ## ✅ Checklist | Indicadores de Desempenho (ID) dos Resultados de Aprendizagem (RA)
 
