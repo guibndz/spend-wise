@@ -1,0 +1,30 @@
+{
+  "name": "spend-wise",
+  "version": "1.0.0",
+  "description": "Este projeto tem como objetivo implementar uma aplicação web responsiva para o gerenciamento de finanças pessoais. O SpendWise permite ao usuário registrar entradas (receitas) e saídas (despesas), categorizá-las e visualizar seu saldo atual.",
+  "main": "index.js",
+  "directories": {
+    "doc": "docs"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/guibndz/spend-wise.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "bugs": {
+    "url": "https://github.com/guibndz/spend-wise/issues"
+  },
+  "homepage": "https://github.com/guibndz/spend-wise#readme",
+  "dependencies": {
+    "jquery": "^4.0.0"
+  },
+  "devDependencies": {
+    "gh-pages": "^6.3.0"
+  }
+}
