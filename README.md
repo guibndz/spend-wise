@@ -62,3 +62,14 @@ Em andamento
 ## 📱 Telas da aplicação
 
 Em andamento
+
+## ✅ Checklist da Atividade 06: Fundamentos de Ecossistema
+
+- [x] Clonei o repositório para a minha máquina local (`git clone`).
+- [x] Inicializei o projeto Node.js criando o arquivo `package.json` (`npm init -y`).
+- [x] Criei o arquivo `.gitignore` e adicionei a regra `/node_modules` para ignorar a pasta.
+- [x] Instalei as dependências de produção (ex: `jquery` ou `uuid` com `--save`).
+- [x] Instalei a dependência de desenvolvimento `gh-pages` (`--save-dev`).
+- [x] Realizei o ciclo diário do Git adicionando as mudanças no stage (`git add .`).
+- [x] Fiz o commit do projeto com uma mensagem descritiva (`git commit -m "..."`).
+- [x] Enviei as alterações salvas para a nuvem no GitHub (`git push origin main`).
