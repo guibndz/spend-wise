@@ -172,7 +172,8 @@ Saldo Total = Σ(Receitas) - Σ(Despesas)
 - **Frontend:** HTML5, CSS3 (ou Sass), JavaScript (vanilla ou com jQuery)
 - **API Fake:** JSON Server (Node.js)
 - **Persistência:** localStorage (front-end) ou JSON Server (back-end simulado)
-- **Framework CSS:** Bootstrap, Tailwind + DaisyUI, ou CSS puro com Flexbox/Grid
+- **Framework CSS:** Bootstrap v5.3.3
+- **API Pública:** AwesomeAPI - API de Cotações de Moedas (v1)
 - **Validação:** Regex para CPF, campos obrigatórios em formulários
 
 ## 7. Fluxo de Autenticação
