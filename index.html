@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SpendWise | Dashboard</title>
+    <!-- Bootstrap 5.3 CSS -->
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts -->
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --bs-primary: #004f45;
+            --bs-primary-rgb: 0, 79, 69;
+            --bs-secondary: #006a62;
+            --bs-danger: #ba1a1a;
+            --bs-body-bg: #f8f9fa;
+            --bs-body-font-family: 'Inter', sans-serif;
+            --headline-font: 'Manrope', sans-serif;
+            --surface-container-low: #f3f4f5;
+            --surface-container-lowest: #ffffff;
+            --surface-container-high: #e7e8e9;
+        }
+        body {
+            background-color: var(--bs-body-bg);
+            color: #191c1d;
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: var(--headline-font);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .glass-nav {
+            backdrop-filter: blur(20px);
+            background: rgba(248, 249, 250, 0.8);
+        }
+        .bg-jewel {
+            background: linear-gradient(135deg, #004f45 0%, #00695c 100%);
+        }
+        .text-primary-custom { color: var(--bs-primary); }
+        .text-secondary-custom { color: var(--bs-secondary); }
+        .text-tertiary-custom { color: #881914; }
+        
+        .bg-surface-lowest { background-color: var(--surface-container-lowest); }
+        .bg-surface-low { background-color: var(--surface-container-low); }
+        .bg-surface-high { background-color: var(--surface-container-high); }
+        
+        .card-shadow { box-shadow: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075); }
+        .card-hover:hover { transform: translateX(0.25rem); transition: transform 0.2s; cursor: pointer; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<!-- Navbar -->
+<nav class="navbar navbar-expand-lg sticky-top glass-nav border-bottom">
+    <div class="container">
+        <a class="navbar-brand font-headline fw-bolder text-primary-custom fs-4" href="#">SpendWise</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold font-headline">
+                <li class="nav-item">
+                    <a class="nav-link text-primary-custom border-bottom border-primary border-2" href="index.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="statement.html">Statements</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+                <span class="d-none d-md-block small text-muted fw-medium">Welcome back, Arthur</span>
+                <img alt="User Avatar" class="rounded-circle" width="32" height="32" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPOwN_fZWfS1oLF91jBbMQU8_eMpSsNql_jJg6sah5qxFkIqja7LxKQQ06h1n14cOdpwXsvvxG6cpHVg4cNQf1ynRE01HjuvoBMekiFzYLGxOJWjDstc0eAXme3xFvJSmVL2laBDG7o2RzMRlPdG0n-JJT1LChoeTOZucgzjDoH9aON-DjAoJHwXOKjedJDeXSDl9itD6-Gzh37dNmnO6BXX2pAkU-HZKVEWoP5IRPHRSFTEaE7Z3GzNSkqpoJXFybdccJkOqf_dA"/>
+                <a href="login.html" class="btn btn-link text-secondary font-headline fw-bold text-decoration-none">Logout</a>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="container py-5 flex-grow-1">
+    <!-- Exchange Rates -->
+    <div class="d-flex align-items-center gap-4 mb-4 pb-2 border-bottom">
+        <div class="d-flex align-items-center gap-2">
+            <span class="fs-5">🇺🇸</span>
+            <span class="font-headline fw-bold small text-uppercase text-muted">USD:</span>
+            <span class="font-headline fw-bolder small text-primary-custom">R$ 5,15</span>
+        </div>
+        <div class="vr border-2"></div>
+        <div class="d-flex align-items-center gap-2">
+            <span class="fs-5">🇪🇺</span>
+            <span class="font-headline fw-bold small text-uppercase text-muted">EUR:</span>
+            <span class="font-headline fw-bolder small text-primary-custom">R$ 5,45</span>
+        </div>
+    </div>
+
+    <!-- Header -->
+    <section class="mb-5">
+        <h1 class="display-6 font-headline fw-bolder text-primary-custom mb-2">Financial Overview</h1>
+        <p class="text-muted">Your wealth performance for the month of October.</p>
+    </section>
+
+    <!-- Main Grid -->
+    <div class="row g-4">
+        <!-- Hero Card -->
+        <div class="col-md-8">
+            <div class="bg-jewel rounded-4 p-5 text-white h-100 d-flex flex-column justify-content-between position-relative overflow-hidden shadow">
+                <div class="position-relative z-1">
+                    <span class="fw-bold tracking-widest small text-uppercase opacity-75">TOTAL BALANCE</span>
+                    <div class="mt-3 d-flex align-items-baseline gap-2">
+                        <span class="fs-4 fw-light opacity-75">R$</span>
+                        <h2 class="display-3 font-headline fw-bolder mb-0">1.500,00</h2>
+                    </div>
+                </div>
+                <div class="mt-5 d-flex gap-3 position-relative z-1">
+                    <button onclick="window.location.href='new-transaction.html'" class="btn btn-light text-primary-custom font-headline fw-bold d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined">add_circle</span>
+                        New Transaction
+                    </button>
+                    <button onclick="window.location.href='statement.html'" class="btn btn-outline-light font-headline fw-bold d-flex align-items-center gap-2">
+                        <span class="material-symbols-outlined">account_balance_wallet</span>
+                        See Statement
+                    </button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Income/Expense Cards -->
+        <div class="col-md-4 d-flex flex-column gap-4">
+            <!-- Income -->
+            <div class="bg-surface-lowest p-4 rounded-4 shadow-sm border-0">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="bg-success bg-opacity-10 rounded-circle p-2 d-flex">
+                        <span class="material-symbols-outlined text-success">arrow_downward</span>
+                    </div>
+                    <span class="badge bg-success bg-opacity-25 text-success rounded-pill">+ 12.4%</span>
+                </div>
+                <div>
+                    <p class="text-muted small fw-semibold text-uppercase mb-1">Monthly Income</p>
+                    <p class="fs-3 font-headline fw-bold text-success mb-0">R$ 4.250,00</p>
+                </div>
+            </div>
+            <!-- Expense -->
+            <div class="bg-surface-lowest p-4 rounded-4 shadow-sm border-0">
+                <div class="d-flex justify-content-between align-items-center mb-3">
+                    <div class="bg-danger bg-opacity-10 rounded-circle p-2 d-flex">
+                        <span class="material-symbols-outlined text-danger">arrow_upward</span>
+                    </div>
+                    <span class="badge bg-danger bg-opacity-25 text-danger rounded-pill">- 4.2%</span>
+                </div>
+                <div>
+                    <p class="text-muted small fw-semibold text-uppercase mb-1">Monthly Expenses</p>
+                    <p class="fs-3 font-headline fw-bold text-danger mb-0">R$ 2.750,00</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Savings Goals -->
+        <div class="col-12 mt-4">
+            <div class="d-flex justify-content-between align-items-end mb-4">
+                <div>
+                    <h3 class="fs-4 font-headline fw-bolder text-primary-custom mb-1">Savings Goals</h3>
+                    <p class="text-muted small mb-0">Track your progress towards future milestones</p>
+                </div>
+                <button onclick="window.location.href='new-goal.html'" class="btn btn-link text-primary-custom fw-bold text-decoration-none p-0 d-flex align-items-center gap-1">
+                    <span class="material-symbols-outlined fs-5">add</span> Create New Goal
+                </button>
+            </div>
+            
+            <div class="row g-4">
+                <!-- Goal 1 -->
+                <div class="col-md-4">
+                    <div class="bg-surface-low p-4 rounded-4 border shadow-sm">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="bg-primary bg-opacity-10 p-2 rounded-3">
+                                <span class="material-symbols-outlined text-primary-custom">security</span>
+                            </div>
+                            <span class="badge bg-primary bg-opacity-25 text-primary-custom rounded text-uppercase">85% Done</span>
+                        </div>
+                        <h4 class="font-headline fw-bold fs-5">Emergency Fund</h4>
+                        <div class="mt-4">
+                            <div class="d-flex justify-content-between small mb-2">
+                                <span class="text-muted">Current: <strong class="text-dark">R$ 8.500</strong></span>
+                                <span class="text-muted">Target: <strong>R$ 10.000</strong></span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-primary" role="progressbar" style="width: 85%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Goal 2 -->
+                <div class="col-md-4">
+                    <div class="bg-surface-low p-4 rounded-4 border shadow-sm">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="bg-secondary bg-opacity-10 p-2 rounded-3">
+                                <span class="material-symbols-outlined text-secondary-custom">directions_car</span>
+                            </div>
+                            <span class="badge bg-secondary bg-opacity-25 text-secondary-custom rounded text-uppercase">42% Done</span>
+                        </div>
+                        <h4 class="font-headline fw-bold fs-5">New Car</h4>
+                        <div class="mt-4">
+                            <div class="d-flex justify-content-between small mb-2">
+                                <span class="text-muted">Current: <strong class="text-dark">R$ 12.600</strong></span>
+                                <span class="text-muted">Target: <strong>R$ 30.000</strong></span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-secondary" role="progressbar" style="width: 42%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <!-- Goal 3 -->
+                <div class="col-md-4">
+                    <div class="bg-surface-low p-4 rounded-4 border shadow-sm">
+                        <div class="d-flex justify-content-between align-items-start mb-3">
+                            <div class="bg-warning bg-opacity-10 p-2 rounded-3">
+                                <span class="material-symbols-outlined text-warning">beach_access</span>
+                            </div>
+                            <span class="badge bg-warning bg-opacity-25 text-warning rounded text-uppercase">12% Done</span>
+                        </div>
+                        <h4 class="font-headline fw-bold fs-5">Japan Vacation</h4>
+                        <div class="mt-4">
+                            <div class="d-flex justify-content-between small mb-2">
+                                <span class="text-muted">Current: <strong class="text-dark">R$ 1.800</strong></span>
+                                <span class="text-muted">Target: <strong>R$ 15.000</strong></span>
+                            </div>
+                            <div class="progress" style="height: 8px;">
+                                <div class="progress-bar bg-warning" role="progressbar" style="width: 12%"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Categories & Transactions -->
+        <div class="col-md-4 mt-5">
+            <div class="bg-surface-low rounded-4 p-4 h-100">
+                <div class="mb-4">
+                    <h3 class="fs-5 font-headline fw-bold text-primary-custom mb-1">Spending by Category</h3>
+                    <p class="text-muted small mb-0">Distribution of monthly costs</p>
+                </div>
+                <div class="d-flex flex-column gap-4">
+                    <!-- Cat 1 -->
+                    <div>
+                        <div class="d-flex justify-content-between align-items-end mb-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="material-symbols-outlined fs-6 text-primary-custom">home</span>
+                                <span class="small fw-semibold">Housing</span>
+                            </div>
+                            <span class="small fw-bold text-primary-custom">R$ 1.200,00</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-primary" role="progressbar" style="width: 45%"></div>
+                        </div>
+                    </div>
+                    <!-- Cat 2 -->
+                    <div>
+                        <div class="d-flex justify-content-between align-items-end mb-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="material-symbols-outlined fs-6 text-secondary-custom">restaurant</span>
+                                <span class="small fw-semibold">Food</span>
+                            </div>
+                            <span class="small fw-bold text-secondary-custom">R$ 850,00</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-secondary" role="progressbar" style="width: 32%"></div>
+                        </div>
+                    </div>
+                    <!-- Cat 3 -->
+                    <div>
+                        <div class="d-flex justify-content-between align-items-end mb-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="material-symbols-outlined fs-6 text-warning">commute</span>
+                                <span class="small fw-semibold">Transport</span>
+                            </div>
+                            <span class="small fw-bold text-warning">R$ 420,00</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-warning" role="progressbar" style="width: 15%"></div>
+                        </div>
+                    </div>
+                    <!-- Cat 4 -->
+                    <div>
+                        <div class="d-flex justify-content-between align-items-end mb-2">
+                            <div class="d-flex align-items-center gap-2">
+                                <span class="material-symbols-outlined fs-6 text-muted">movie</span>
+                                <span class="small fw-semibold">Entertainment</span>
+                            </div>
+                            <span class="small fw-bold text-muted">R$ 280,00</span>
+                        </div>
+                        <div class="progress" style="height: 6px;">
+                            <div class="progress-bar bg-secondary text-bg-secondary opacity-50" role="progressbar" style="width: 8%"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="mt-4 pt-3 border-top text-center">
+                    <p class="small text-muted fst-italic mb-0">You've spent 8% less on Entertainment than last month.</p>
+                </div>
+            </div>
+        </div>
+
+        <div class="col-md-8 mt-5">
+            <div class="bg-surface-low rounded-4 p-4 h-100">
+                <div class="d-flex justify-content-between align-items-end mb-4">
+                    <div>
+                        <h3 class="fs-5 font-headline fw-bold text-primary-custom mb-1">Recent Transactions</h3>
+                        <p class="text-muted small mb-0">Activity from the last 7 days</p>
+                    </div>
+                    <button class="btn btn-link text-primary-custom fw-bold small text-decoration-none p-0">View All</button>
+                </div>
+                <div class="d-flex flex-column gap-3">
+                    <!-- Transaction 1 -->
+                    <div class="bg-surface-lowest p-3 rounded-3 d-flex align-items-center justify-content-between shadow-sm card-hover">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-surface-high p-2 rounded-3 d-flex">
+                                <span class="material-symbols-outlined text-muted">shopping_bag</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-0 small">Whole Foods Market</p>
+                                <p class="small text-muted mb-0" style="font-size: 0.75rem;">Oct 24 • Groceries</p>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <p class="font-headline fw-bold text-tertiary-custom mb-0">- R$ 245,30</p>
+                            <span class="text-muted fw-medium" style="font-size: 0.65rem;">Verified</span>
+                        </div>
+                    </div>
+                    <!-- Transaction 2 -->
+                    <div class="bg-surface-lowest p-3 rounded-3 d-flex align-items-center justify-content-between shadow-sm card-hover">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-surface-high p-2 rounded-3 d-flex">
+                                <span class="material-symbols-outlined text-muted">payments</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-0 small">Monthly Salary</p>
+                                <p class="small text-muted mb-0" style="font-size: 0.75rem;">Oct 21 • Income</p>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <p class="font-headline fw-bold text-success mb-0">+ R$ 4.250,00</p>
+                            <span class="text-muted fw-medium" style="font-size: 0.65rem;">Automatic</span>
+                        </div>
+                    </div>
+                    <!-- Transaction 3 -->
+                    <div class="bg-surface-lowest p-3 rounded-3 d-flex align-items-center justify-content-between shadow-sm card-hover">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-surface-high p-2 rounded-3 d-flex">
+                                <span class="material-symbols-outlined text-muted">restaurant</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-0 small">The Green Bistro</p>
+                                <p class="small text-muted mb-0" style="font-size: 0.75rem;">Oct 20 • Dining</p>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <p class="font-headline fw-bold text-tertiary-custom mb-0">- R$ 128,50</p>
+                            <span class="text-muted fw-medium" style="font-size: 0.65rem;">Personal</span>
+                        </div>
+                    </div>
+                    <!-- Transaction 4 -->
+                    <div class="bg-surface-lowest p-3 rounded-3 d-flex align-items-center justify-content-between shadow-sm card-hover">
+                        <div class="d-flex align-items-center gap-3">
+                            <div class="bg-surface-high p-2 rounded-3 d-flex">
+                                <span class="material-symbols-outlined text-muted">directions_car</span>
+                            </div>
+                            <div>
+                                <p class="fw-bold mb-0 small">Uber Trip</p>
+                                <p class="small text-muted mb-0" style="font-size: 0.75rem;">Oct 19 • Transport</p>
+                            </div>
+                        </div>
+                        <div class="text-end">
+                            <p class="font-headline fw-bold text-tertiary-custom mb-0">- R$ 42,90</p>
+                            <span class="text-muted fw-medium" style="font-size: 0.65rem;">Business</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<footer class="bg-surface-low mt-auto py-5 border-top">
+    <div class="container d-flex flex-column flex-md-row justify-content-between align-items-center gap-3">
+        <div class="text-center text-md-start">
+            <span class="font-headline fw-bold text-primary-custom fs-5">SpendWise</span>
+            <p class="small text-muted mb-0">© 2024 SpendWise Digital Private Bank</p>
+        </div>
+        <div class="d-flex gap-4">
+            <a href="#" class="text-muted text-decoration-none small hover-primary">Privacy Policy</a>
+            <a href="#" class="text-muted text-decoration-none small hover-primary">Terms of Service</a>
+            <a href="#" class="text-muted text-decoration-none small hover-primary">Support</a>
+        </div>
+    </div>
+</footer>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

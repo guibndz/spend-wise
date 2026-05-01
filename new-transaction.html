@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>New Transaction | SpendWise</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --bs-primary: #004f45;
+            --bs-secondary: #006a62;
+            --bs-danger: #ba1a1a;
+            --bs-body-bg: #f8f9fa;
+            --bs-body-font-family: 'Inter', sans-serif;
+            --headline-font: 'Manrope', sans-serif;
+            --surface-container-low: #f3f4f5;
+            --surface-container-lowest: #ffffff;
+            --surface-container-high: #e7e8e9;
+        }
+        body { background-color: var(--bs-body-bg); color: #191c1d; font-family: var(--bs-body-font-family); }
+        h1, h2, h3, h4, h5, h6, .font-headline { font-family: var(--headline-font); }
+        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
+        .glass-nav { backdrop-filter: blur(20px); background: rgba(248, 249, 250, 0.8); }
+        .bg-surface-lowest { background-color: var(--surface-container-lowest); }
+        .bg-surface-low { background-color: var(--surface-container-low); }
+        .text-primary-custom { color: var(--bs-primary); }
+        .bg-jewel { background: linear-gradient(135deg, #004f45 0%, #00695c 100%); }
+        .form-control:focus { box-shadow: none; border-color: var(--bs-primary); }
+        .form-control-custom { background-color: var(--surface-container-low); border: none; padding: 1rem 1.5rem; }
+    </style>
+</head>
+<body class="d-flex flex-column min-vh-100">
+
+<nav class="navbar navbar-expand-lg sticky-top glass-nav border-bottom py-3">
+    <div class="container">
+        <a class="navbar-brand font-headline fw-bolder text-primary-custom fs-4" href="index.html">SpendWise</a>
+        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold font-headline">
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="index.html">Dashboard</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link text-secondary" href="statement.html">Statements</a>
+                </li>
+            </ul>
+            <div class="d-flex align-items-center gap-3">
+                <a href="login.html" class="btn btn-link text-secondary font-headline fw-bold text-decoration-none">Logout</a>
+                <img alt="User Avatar" class="rounded-circle" width="32" height="32" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPOwN_fZWfS1oLF91jBbMQU8_eMpSsNql_jJg6sah5qxFkIqja7LxKQQ06h1n14cOdpwXsvvxG6cpHVg4cNQf1ynRE01HjuvoBMekiFzYLGxOJWjDstc0eAXme3xFvJSmVL2laBDG7o2RzMRlPdG0n-JJT1LChoeTOZucgzjDoH9aON-DjAoJHwXOKjedJDeXSDl9itD6-Gzh37dNmnO6BXX2pAkU-HZKVEWoP5IRPHRSFTEaE7Z3GzNSkqpoJXFybdccJkOqf_dA"/>
+            </div>
+        </div>
+    </div>
+</nav>
+
+<main class="container py-5 flex-grow-1" style="max-width: 800px;">
+    <header class="text-center mb-5">
+        <h1 class="display-6 font-headline fw-bolder text-primary-custom mb-2">Log Movement</h1>
+        <p class="text-muted fw-medium">Record your financial flow with editorial precision</p>
+    </header>
+
+    <div class="bg-surface-lowest p-4 p-md-5 rounded-4 shadow-sm">
+        <form action="index.html">
+            <!-- Type Toggle -->
+            <div class="d-flex bg-surface-low p-1 rounded-3 mb-4">
+                <button type="button" class="btn btn-light bg-surface-lowest flex-grow-1 border-0 shadow-sm font-headline fw-bold text-primary-custom d-flex justify-content-center align-items-center gap-2 py-3">
+                    <span class="material-symbols-outlined fs-5">arrow_downward</span> Expense
+                </button>
+                <button type="button" class="btn text-muted flex-grow-1 border-0 font-headline fw-bold d-flex justify-content-center align-items-center gap-2 py-3 hover-bg-light">
+                    <span class="material-symbols-outlined fs-5">arrow_upward</span> Income
+                </button>
+            </div>
+
+            <!-- Description -->
+            <div class="mb-4">
+                <label class="form-label small fw-bold text-muted text-uppercase mb-2 ms-1" style="letter-spacing: 1px;">Description</label>
+                <div class="input-group">
+                    <input type="text" class="form-control form-control-custom rounded-3" placeholder="e.g. Monthly Rent, Coffee, Salary" required>
+                </div>
+            </div>
+
+            <div class="row g-4 mb-4">
+                <!-- Value -->
+                <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted text-uppercase mb-2 ms-1" style="letter-spacing: 1px;">Value (R$)</label>
+                    <div class="input-group align-items-center bg-surface-low rounded-3 px-3">
+                        <span class="text-primary-custom fw-bold">R$</span>
+                        <input type="number" step="0.01" class="form-control bg-transparent border-0 font-headline fw-bold fs-4 py-3" placeholder="0,00" required>
+                    </div>
+                </div>
+                <!-- Date -->
+                <div class="col-md-6">
+                    <label class="form-label small fw-bold text-muted text-uppercase mb-2 ms-1" style="letter-spacing: 1px;">Date</label>
+                    <input type="date" class="form-control form-control-custom rounded-3" required>
+                </div>
+            </div>
+
+            <!-- Category -->
+            <div class="mb-4">
+                <label class="form-label small fw-bold text-muted text-uppercase mb-2 ms-1" style="letter-spacing: 1px;">Category</label>
+                <div class="d-flex flex-wrap gap-2">
+                    <button type="button" class="btn btn-secondary bg-opacity-10 text-secondary border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2">
+                        <span class="material-symbols-outlined fs-6">restaurant</span> Dining
+                    </button>
+                    <button type="button" class="btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2">
+                        <span class="material-symbols-outlined fs-6">shopping_bag</span> Shopping
+                    </button>
+                    <button type="button" class="btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2">
+                        <span class="material-symbols-outlined fs-6">directions_car</span> Transport
+                    </button>
+                    <button type="button" class="btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2">
+                        <span class="material-symbols-outlined fs-6">more_horiz</span> Other
+                    </button>
+                </div>
+            </div>
+
+            <hr class="my-4 opacity-25">
+
+            <div class="d-flex flex-column flex-sm-row align-items-center gap-3">
+                <button type="button" onclick="window.location.href='index.html'" class="btn bg-jewel text-white font-headline fw-bold rounded-3 py-3 px-4 shadow-sm w-100 w-sm-auto d-flex justify-content-center align-items-center gap-2 flex-grow-1">
+                    Save Transaction
+                    <span class="material-symbols-outlined fs-5">check_circle</span>
+                </button>
+                <button type="button" onclick="window.location.href='index.html'" class="btn btn-link text-muted font-headline fw-bold text-decoration-none py-3 px-4 w-100 w-sm-auto">
+                    Discard
+                </button>
+            </div>
+        </form>
+    </div>
+    
+    <div class="d-flex justify-content-center gap-4 mt-5">
+        <div class="d-flex align-items-center gap-2 small text-muted fw-medium">
+            <span class="material-symbols-outlined fs-6 text-primary-custom">security</span> End-to-end encrypted
+        </div>
+        <div class="d-flex align-items-center gap-2 small text-muted fw-medium">
+            <span class="material-symbols-outlined fs-6 text-primary-custom">sync</span> Real-time sync
+        </div>
+    </div>
+</main>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

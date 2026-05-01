@@ -1,0 +1,183 @@
+<!DOCTYPE html>
+<html lang="en" data-bs-theme="light">
+<head>
+    <meta charset="utf-8"/>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+    <title>SpendWise | Sign Up</title>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
+    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <style>
+        :root {
+            --bs-primary: #004f45;
+            --bs-primary-rgb: 0, 79, 69;
+            --bs-secondary: #006a62;
+            --bs-danger: #ba1a1a;
+            --bs-body-bg: #f8f9fa;
+            --bs-body-font-family: 'Inter', sans-serif;
+            --headline-font: 'Manrope', sans-serif;
+            --surface-container-low: #f3f4f5;
+            --surface-container-lowest: #ffffff;
+            --surface-container-high: #e7e8e9;
+        }
+        body {
+            background-color: var(--bs-body-bg);
+            color: #191c1d;
+            font-family: var(--bs-body-font-family);
+        }
+        h1, h2, h3, h4, h5, h6, .font-headline {
+            font-family: var(--headline-font);
+        }
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+            vertical-align: middle;
+        }
+        .bg-jewel {
+            background: linear-gradient(135deg, #004f45 0%, #00695c 100%);
+        }
+        .text-primary-custom { color: var(--bs-primary); }
+        .text-secondary-custom { color: var(--bs-secondary); }
+        .bg-surface-lowest { background-color: var(--surface-container-lowest); }
+        .bg-surface-low { background-color: var(--surface-container-low); }
+        .bg-surface-high { background-color: var(--surface-container-high); }
+        
+        .min-vh-100 { min-height: 100vh; }
+        .card-shadow { box-shadow: 0 1rem 3rem rgba(0,0,0,.175)!important; }
+        .glass-effect {
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+        }
+        .input-group-text.bg-surface-low {
+            border-right: 0;
+            background-color: var(--surface-container-low);
+            border: none;
+        }
+        .form-control.bg-surface-low {
+            border-left: 0;
+            background-color: var(--surface-container-low);
+            border: none;
+        }
+        .input-group {
+            background-color: var(--surface-container-low);
+            border-radius: 0.5rem;
+        }
+        .form-control:focus {
+            box-shadow: none;
+            background-color: var(--surface-container-low);
+        }
+        .input-group:focus-within {
+            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+        }
+        .input-group:focus-within .material-symbols-outlined {
+            color: var(--bs-primary);
+        }
+    </style>
+</head>
+<body class="d-flex align-items-center justify-content-center min-vh-100 py-4">
+
+<main class="container">
+    <div class="row justify-content-center">
+        <div class="col-12 col-xl-10">
+            <div class="card border-0 rounded-4 overflow-hidden card-shadow bg-surface-lowest">
+                <div class="row g-0">
+                    <!-- Left Side (Hidden on mobile) -->
+                    <div class="col-md-5 col-lg-6 bg-jewel text-white p-5 d-none d-md-flex flex-column justify-content-between position-relative">
+                        <div class="position-relative z-1">
+                            <h2 class="font-headline fw-bolder fs-3 mb-5">SpendWise</h2>
+                            <h1 class="font-headline fw-bold display-6 mb-4">Experience the future of personal wealth.</h1>
+                            <p class="mb-5 text-white-50">Join an exclusive circle of users managing their financial legacy with architectural precision and quiet confidence.</p>
+                        </div>
+                        <div class="position-relative z-1 d-flex flex-column gap-4">
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="p-2 rounded-circle glass-effect d-flex align-items-center justify-content-center">
+                                    <span class="material-symbols-outlined">verified_user</span>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Institutional Security</h6>
+                                    <small class="text-white-50">Vault-grade protection for every transaction.</small>
+                                </div>
+                            </div>
+                            <div class="d-flex align-items-center gap-3">
+                                <div class="p-2 rounded-circle glass-effect d-flex align-items-center justify-content-center">
+                                    <span class="material-symbols-outlined">insights</span>
+                                </div>
+                                <div>
+                                    <h6 class="fw-bold mb-0">Wealth Momentum</h6>
+                                    <small class="text-white-50">Visualizing growth with editorial clarity.</small>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <!-- Right Side: Form -->
+                    <div class="col-md-7 col-lg-6 p-4 p-md-5">
+                        <div class="d-md-none mb-4">
+                            <span class="font-headline fw-bolder fs-3 text-primary-custom">SpendWise</span>
+                        </div>
+                        <div class="mb-4">
+                            <h2 class="font-headline fw-bold fs-3">Create Account</h2>
+                            <p class="text-muted small">Start your journey toward financial clarity today.</p>
+                        </div>
+                        
+                        <form action="login.html">
+                            <div class="mb-3">
+                                <label for="full_name" class="form-label small fw-semibold text-muted ms-1 mb-1">Full Name</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-surface-low text-muted">
+                                        <span class="material-symbols-outlined fs-5">person</span>
+                                    </span>
+                                    <input type="text" class="form-control bg-surface-low py-3" id="full_name" placeholder="John Doe">
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="cpf" class="form-label small fw-semibold text-muted ms-1 mb-1">CPF</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-surface-low text-muted">
+                                        <span class="material-symbols-outlined fs-5">badge</span>
+                                    </span>
+                                    <input type="text" class="form-control bg-surface-low py-3" id="cpf" placeholder="000.000.000-00">
+                                </div>
+                                <div class="form-text small ms-1 d-flex align-items-center gap-1">
+                                    <span class="material-symbols-outlined" style="font-size: 14px;">info</span> Enter only numbers. We will format it for you.
+                                </div>
+                            </div>
+                            <div class="mb-3">
+                                <label for="password" class="form-label small fw-semibold text-muted ms-1 mb-1">Password</label>
+                                <div class="input-group">
+                                    <span class="input-group-text bg-surface-low text-muted">
+                                        <span class="material-symbols-outlined fs-5">lock</span>
+                                    </span>
+                                    <input type="password" class="form-control bg-surface-low py-3" id="password" placeholder="••••••••••••">
+                                </div>
+                                <div class="form-text small ms-1">Minimum 8 characters with at least one number.</div>
+                            </div>
+                            <div class="form-check my-4 ms-1">
+                                <input class="form-check-input" type="checkbox" value="" id="terms">
+                                <label class="form-check-label small text-muted" for="terms">
+                                    I agree to the <a href="#" class="text-primary-custom text-decoration-none fw-semibold">Terms of Service</a> and <a href="#" class="text-primary-custom text-decoration-none fw-semibold">Privacy Policy</a>.
+                                </label>
+                            </div>
+                            
+                            <button type="button" onclick="window.location.href='login.html'" class="btn w-100 bg-jewel text-white py-3 rounded-3 font-headline fw-bold shadow-sm d-flex align-items-center justify-content-center gap-2">
+                                Create Account
+                                <span class="material-symbols-outlined">arrow_forward</span>
+                            </button>
+                        </form>
+                        
+                        <div class="text-center mt-5 pt-4 border-top">
+                            <p class="text-muted small mb-0">
+                                Already have a SpendWise account? 
+                                <a href="login.html" class="text-primary-custom fw-bold text-decoration-none">Login</a>
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</main>
+
+<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

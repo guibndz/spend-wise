@@ -1,0 +1,12 @@
+:root {
+  --bs-primary: #ff5733; /* Laranja - Nova cor primária */
+  --bs-primary-rgb: 255, 87, 51; 
+  --bs-secondary: #33aaff; /* Azul - Nova cor secundária */
+}
+
+.custom-card {
+  background-color: var(--bs-secondary);
+  color: white; 
+  padding: 1rem;
+  border-radius: 0.25rem;
+}
