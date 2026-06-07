@@ -7,7 +7,10 @@
     "doc": "docs"
   },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build:css": "sass scss/style.scss style.css",
+    "format": "prettier --write \"**/*.{html,css,scss,js}\"",
+    "lint": "eslint \"**/*.js\""
   },
   "repository": {
     "type": "git",
@@ -26,6 +29,9 @@
     "jquery": "^4.0.0"
   },
   "devDependencies": {
-    "gh-pages": "^6.3.0"
+    "eslint": "^10.4.1",
+    "gh-pages": "^6.3.0",
+    "prettier": "^3.8.3",
+    "sass": "^1.100.0"
   }
 }

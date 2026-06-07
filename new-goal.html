@@ -1,173 +1,255 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-bs-theme="light">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Create New Goal | SpendWise</title>
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
-    <style>
-        :root {
-            --bs-primary: #004f45;
-            --bs-secondary: #006a62;
-            --bs-danger: #ba1a1a;
-            --bs-body-bg: #f8f9fa;
-            --bs-body-font-family: 'Inter', sans-serif;
-            --headline-font: 'Manrope', sans-serif;
-            --surface-container-low: #f3f4f5;
-            --surface-container-lowest: #ffffff;
-            --surface-container-high: #e7e8e9;
-        }
-        body { background-color: var(--bs-body-bg); color: #191c1d; font-family: var(--bs-body-font-family); }
-        h1, h2, h3, h4, h5, h6, .font-headline { font-family: var(--headline-font); }
-        .material-symbols-outlined { font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24; vertical-align: middle; }
-        .glass-nav { backdrop-filter: blur(20px); background: rgba(248, 249, 250, 0.8); }
-        .bg-surface-lowest { background-color: var(--surface-container-lowest); }
-        .bg-surface-low { background-color: var(--surface-container-low); }
-        .text-primary-custom { color: var(--bs-primary); }
-        .bg-jewel { background: linear-gradient(135deg, #004f45 0%, #00695c 100%); }
-        .form-control:focus { box-shadow: none; border-color: var(--bs-primary); }
-        .form-control-custom { background-color: var(--surface-container-lowest); border: none; padding: 1rem; }
-    </style>
-</head>
-<body class="d-flex flex-column min-vh-100">
-
-<nav class="navbar navbar-expand-lg sticky-top glass-nav border-bottom py-3">
-    <div class="container">
-        <a class="navbar-brand font-headline fw-bolder text-primary-custom fs-4" href="index.html">SpendWise</a>
-        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
-            <span class="navbar-toggler-icon"></span>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
+    <link href="style.css" rel="stylesheet" />
+  </head>
+  <body class="d-flex flex-column min-vh-100">
+    <nav class="navbar navbar-expand-lg sticky-top glass-nav border-bottom py-3">
+      <div class="container">
+        <a class="navbar-brand font-headline fw-bolder text-primary-custom fs-4" href="index.html"
+          >SpendWise</a
+        >
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-bs-toggle="collapse"
+          data-bs-target="#navbarNav"
+        >
+          <span class="navbar-toggler-icon"></span>
         </button>
         <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold font-headline">
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="index.html">Dashboard</a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link text-secondary" href="statement.html">Statements</a>
-                </li>
-            </ul>
-            <div class="d-flex align-items-center gap-3">
-                <a href="login.html" class="btn btn-link text-secondary font-headline fw-bold text-decoration-none">Logout</a>
-                <img alt="User Avatar" class="rounded-circle" width="32" height="32" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPOwN_fZWfS1oLF91jBbMQU8_eMpSsNql_jJg6sah5qxFkIqja7LxKQQ06h1n14cOdpwXsvvxG6cpHVg4cNQf1ynRE01HjuvoBMekiFzYLGxOJWjDstc0eAXme3xFvJSmVL2laBDG7o2RzMRlPdG0n-JJT1LChoeTOZucgzjDoH9aON-DjAoJHwXOKjedJDeXSDl9itD6-Gzh37dNmnO6BXX2pAkU-HZKVEWoP5IRPHRSFTEaE7Z3GzNSkqpoJXFybdccJkOqf_dA"/>
-            </div>
+          <ul class="navbar-nav me-auto mb-2 mb-lg-0 fw-bold font-headline">
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="index.html">Dashboard</a>
+            </li>
+            <li class="nav-item">
+              <a class="nav-link text-secondary" href="statement.html">Statements</a>
+            </li>
+          </ul>
+          <div class="d-flex align-items-center gap-3">
+            <a
+              href="login.html"
+              class="btn btn-link text-secondary font-headline fw-bold text-decoration-none"
+              >Logout</a
+            >
+            <img
+              alt="User Avatar"
+              class="rounded-circle"
+              width="32"
+              height="32"
+              src="https://lh3.googleusercontent.com/aida-public/AB6AXuAPOwN_fZWfS1oLF91jBbMQU8_eMpSsNql_jJg6sah5qxFkIqja7LxKQQ06h1n14cOdpwXsvvxG6cpHVg4cNQf1ynRE01HjuvoBMekiFzYLGxOJWjDstc0eAXme3xFvJSmVL2laBDG7o2RzMRlPdG0n-JJT1LChoeTOZucgzjDoH9aON-DjAoJHwXOKjedJDeXSDl9itD6-Gzh37dNmnO6BXX2pAkU-HZKVEWoP5IRPHRSFTEaE7Z3GzNSkqpoJXFybdccJkOqf_dA"
+            />
+          </div>
         </div>
-    </div>
-</nav>
+      </div>
+    </nav>
 
-<main class="container py-5 flex-grow-1" style="max-width: 900px;">
-    <!-- Header -->
-    <div class="d-flex align-items-center gap-4 mb-5">
-        <a href="index.html" class="btn btn-light bg-surface-low rounded-circle d-flex align-items-center justify-content-center border-0 shadow-sm" style="width: 48px; height: 48px;">
-            <span class="material-symbols-outlined text-primary-custom">arrow_back</span>
+    <main class="container py-5 flex-grow-1" style="max-width: 900px">
+      <!-- Header -->
+      <div class="d-flex align-items-center gap-4 mb-5">
+        <a
+          href="index.html"
+          class="btn btn-light bg-surface-low rounded-circle d-flex align-items-center justify-content-center border-0 shadow-sm"
+          style="width: 48px; height: 48px"
+        >
+          <span class="material-symbols-outlined text-primary-custom">arrow_back</span>
         </a>
         <div>
-            <span class="small fw-bold text-muted text-uppercase" style="letter-spacing: 1px;">Planning</span>
-            <h1 class="display-6 font-headline fw-bolder text-primary-custom mb-0">Create New Goal</h1>
+          <span class="small fw-bold text-muted text-uppercase" style="letter-spacing: 1px"
+            >Planning</span
+          >
+          <h1 class="display-6 font-headline fw-bolder text-primary-custom mb-0">
+            Create New Goal
+          </h1>
         </div>
-    </div>
+      </div>
 
-    <!-- Form Canvas -->
-    <form action="index.html">
+      <!-- Form Canvas -->
+      <form action="index.html">
         <!-- Section 1: Identity -->
         <section class="mb-5">
-            <div class="d-flex align-items-center gap-3 mb-4">
-                <div class="bg-primary rounded-pill" style="width: 4px; height: 24px;"></div>
-                <h2 class="fs-4 font-headline fw-bold mb-0">Goal Identity</h2>
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="bg-primary rounded-pill" style="width: 4px; height: 24px"></div>
+            <h2 class="fs-4 font-headline fw-bold mb-0">Goal Identity</h2>
+          </div>
+
+          <div class="row g-4">
+            <!-- Goal Name -->
+            <div class="col-md-6">
+              <label class="form-label small fw-semibold text-muted ms-1">Goal Name</label>
+              <input
+                type="text"
+                class="form-control form-control-custom rounded-3 shadow-sm"
+                placeholder="e.g. Dream Home Fund"
+                required
+              />
             </div>
-            
-            <div class="row g-4">
-                <!-- Goal Name -->
-                <div class="col-md-6">
-                    <label class="form-label small fw-semibold text-muted ms-1">Goal Name</label>
-                    <input type="text" class="form-control form-control-custom rounded-3 shadow-sm" placeholder="e.g. Dream Home Fund" required>
-                </div>
-                <!-- Category Icon -->
-                <div class="col-md-6">
-                    <label class="form-label small fw-semibold text-muted ms-1">Category Icon</label>
-                    <div class="d-flex gap-2">
-                        <button type="button" class="btn btn-primary text-white rounded-3 shadow-sm d-flex align-items-center justify-content-center p-3">
-                            <span class="material-symbols-outlined fs-5">home</span>
-                        </button>
-                        <button type="button" class="btn btn-light bg-surface-low text-muted rounded-3 d-flex align-items-center justify-content-center p-3 border-0">
-                            <span class="material-symbols-outlined fs-5">directions_car</span>
-                        </button>
-                        <button type="button" class="btn btn-light bg-surface-low text-muted rounded-3 d-flex align-items-center justify-content-center p-3 border-0">
-                            <span class="material-symbols-outlined fs-5">flight</span>
-                        </button>
-                        <button type="button" class="btn btn-light bg-surface-low text-muted rounded-3 d-flex align-items-center justify-content-center p-3 border-0">
-                            <span class="material-symbols-outlined fs-5">health_and_safety</span>
-                        </button>
-                        <button type="button" class="btn btn-light bg-surface-low text-muted rounded-3 d-flex align-items-center justify-content-center p-3 border-0">
-                            <span class="material-symbols-outlined fs-5">more_horiz</span>
-                        </button>
-                    </div>
-                </div>
+            <!-- Category Icon -->
+            <div class="col-md-6">
+              <label class="form-label small fw-semibold text-muted ms-1">Category Icon</label>
+              <div class="d-flex gap-2">
+                <button
+                  type="button"
+                  class="btn btn-primary text-white rounded-3 shadow-sm d-flex align-items-center justify-content-center p-3"
+                >
+                  <span class="material-symbols-outlined fs-5">home</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light bg-surface-low text-muted rounded-3 d-flex align-items-center justify-content-center p-3 border-0"
+                >
+                  <span class="material-symbols-outlined fs-5">directions_car</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light bg-surface-low text-muted rounded-3 d-flex align-items-center justify-content-center p-3 border-0"
+                >
+                  <span class="material-symbols-outlined fs-5">flight</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light bg-surface-low text-muted rounded-3 d-flex align-items-center justify-content-center p-3 border-0"
+                >
+                  <span class="material-symbols-outlined fs-5">health_and_safety</span>
+                </button>
+                <button
+                  type="button"
+                  class="btn btn-light bg-surface-low text-muted rounded-3 d-flex align-items-center justify-content-center p-3 border-0"
+                >
+                  <span class="material-symbols-outlined fs-5">more_horiz</span>
+                </button>
+              </div>
             </div>
+          </div>
         </section>
 
         <!-- Section 2: Financials -->
         <section class="bg-surface-low p-4 p-md-5 rounded-4 mb-5">
-            <div class="d-flex align-items-center gap-3 mb-4">
-                <div class="bg-primary rounded-pill" style="width: 4px; height: 24px;"></div>
-                <h2 class="fs-4 font-headline fw-bold mb-0">Financial Targets</h2>
+          <div class="d-flex align-items-center gap-3 mb-4">
+            <div class="bg-primary rounded-pill" style="width: 4px; height: 24px"></div>
+            <h2 class="fs-4 font-headline fw-bold mb-0">Financial Targets</h2>
+          </div>
+
+          <div class="row g-4">
+            <!-- Target Amount -->
+            <div class="col-md-6">
+              <label class="form-label small fw-semibold text-muted ms-1">Target Amount</label>
+              <div class="input-group align-items-center bg-white rounded-3 shadow-sm px-3">
+                <span class="text-primary-custom fw-bold">R$</span>
+                <input
+                  type="number"
+                  step="0.01"
+                  class="form-control bg-transparent border-0 font-headline fw-bold fs-4 py-3"
+                  placeholder="0,00"
+                  required
+                />
+              </div>
             </div>
-            
-            <div class="row g-4">
-                <!-- Target Amount -->
-                <div class="col-md-6">
-                    <label class="form-label small fw-semibold text-muted ms-1">Target Amount</label>
-                    <div class="input-group align-items-center bg-white rounded-3 shadow-sm px-3">
-                        <span class="text-primary-custom fw-bold">R$</span>
-                        <input type="number" step="0.01" class="form-control bg-transparent border-0 font-headline fw-bold fs-4 py-3" placeholder="0,00" required>
-                    </div>
-                </div>
-                <!-- Target Date -->
-                <div class="col-md-6">
-                    <label class="form-label small fw-semibold text-muted ms-1">Target Date</label>
-                    <input type="date" class="form-control form-control-custom rounded-3 shadow-sm py-3" required>
-                </div>
-                <!-- Initial Deposit -->
-                <div class="col-12">
-                    <label class="form-label small fw-semibold text-muted ms-1">Initial Deposit (Optional)</label>
-                    <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
-                        <div class="input-group align-items-center bg-white rounded-3 shadow-sm px-3 flex-grow-1">
-                            <span class="text-muted fw-bold">R$</span>
-                            <input type="number" step="0.01" class="form-control bg-transparent border-0 py-3" placeholder="How much do you have now?">
-                        </div>
-                        <div class="bg-secondary bg-opacity-10 text-secondary-custom rounded-pill px-3 py-2 small fw-bold text-uppercase d-flex align-items-center gap-2" style="letter-spacing: 1px;">
-                            <span class="material-symbols-outlined fs-6">trending_up</span> Momentum
-                        </div>
-                    </div>
-                    <p class="small text-muted mt-2 ms-1 mb-0">Adding an initial deposit helps you reach your goal up to 15% faster.</p>
-                </div>
+            <!-- Target Date -->
+            <div class="col-md-6">
+              <label class="form-label small fw-semibold text-muted ms-1">Target Date</label>
+              <input
+                type="date"
+                class="form-control form-control-custom rounded-3 shadow-sm py-3"
+                required
+              />
             </div>
+            <!-- Initial Deposit -->
+            <div class="col-12">
+              <label class="form-label small fw-semibold text-muted ms-1"
+                >Initial Deposit (Optional)</label
+              >
+              <div class="d-flex flex-column flex-md-row align-items-md-center gap-3">
+                <div
+                  class="input-group align-items-center bg-white rounded-3 shadow-sm px-3 flex-grow-1"
+                >
+                  <span class="text-muted fw-bold">R$</span>
+                  <input
+                    type="number"
+                    step="0.01"
+                    class="form-control bg-transparent border-0 py-3"
+                    placeholder="How much do you have now?"
+                  />
+                </div>
+                <div
+                  class="bg-secondary bg-opacity-10 text-secondary-custom rounded-pill px-3 py-2 small fw-bold text-uppercase d-flex align-items-center gap-2"
+                  style="letter-spacing: 1px"
+                >
+                  <span class="material-symbols-outlined fs-6">trending_up</span> Momentum
+                </div>
+              </div>
+              <p class="small text-muted mt-2 ms-1 mb-0">
+                Adding an initial deposit helps you reach your goal up to 15% faster.
+              </p>
+            </div>
+          </div>
         </section>
 
         <!-- Decorative Visual -->
-        <div class="position-relative rounded-4 overflow-hidden mb-5" style="height: 200px;">
-            <img class="w-100 h-100 object-fit-cover" style="filter: grayscale(100%); opacity: 0.6; transition: all 0.5s ease;" onmouseover="this.style.filter='grayscale(0%)'; this.style.opacity='1'" onmouseout="this.style.filter='grayscale(100%)'; this.style.opacity='0.6'" src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOMTPMuXvadAPBwswidwIIBFiwE-68aYIdUw3RO8xl50Lbf9peGY65iHt5AyM3BA3wnuYroU0zL_Peu1c0yqOjSyykufZ9HVKbK_WO8UcG91Oj7krtH9ivsIGhKqI2BgqYoqviSGc2g4FQCvtJW7-t92MCKLF3QarviPf3c8SfVUgW95ajX33wV-bjJ_-H5IxC6ry_EPS___Xm3sasEbCNIrN_Pcu38HvLNc_SG8Iaw2sjjKsgZPuVsmfakdZCZyJ0aLY__YrurD8" alt="Jar filled with coins">
-            <div class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center px-4 px-md-5" style="background: linear-gradient(90deg, rgba(0,79,69,0.85) 0%, rgba(0,79,69,0) 100%); pointer-events: none;">
-                <div style="max-width: 300px;">
-                    <h3 class="text-white fs-5 font-headline fw-bold mb-1">Visualization is Key</h3>
-                    <p class="text-white text-opacity-75 small mb-0">Users who name their goals and set specific target dates are 42% more likely to save consistently.</p>
-                </div>
+        <div class="position-relative rounded-4 overflow-hidden mb-5" style="height: 200px">
+          <img
+            class="w-100 h-100 object-fit-cover"
+            style="filter: grayscale(100%); opacity: 0.6; transition: all 0.5s ease"
+            onmouseover="
+              this.style.filter = 'grayscale(0%)'
+              this.style.opacity = '1'
+            "
+            onmouseout="
+              this.style.filter = 'grayscale(100%)'
+              this.style.opacity = '0.6'
+            "
+            src="https://lh3.googleusercontent.com/aida-public/AB6AXuBOMTPMuXvadAPBwswidwIIBFiwE-68aYIdUw3RO8xl50Lbf9peGY65iHt5AyM3BA3wnuYroU0zL_Peu1c0yqOjSyykufZ9HVKbK_WO8UcG91Oj7krtH9ivsIGhKqI2BgqYoqviSGc2g4FQCvtJW7-t92MCKLF3QarviPf3c8SfVUgW95ajX33wV-bjJ_-H5IxC6ry_EPS___Xm3sasEbCNIrN_Pcu38HvLNc_SG8Iaw2sjjKsgZPuVsmfakdZCZyJ0aLY__YrurD8"
+            alt="Jar filled with coins"
+          />
+          <div
+            class="position-absolute top-0 start-0 w-100 h-100 d-flex align-items-center px-4 px-md-5"
+            style="
+              background: linear-gradient(90deg, rgba(0, 79, 69, 0.85) 0%, rgba(0, 79, 69, 0) 100%);
+              pointer-events: none;
+            "
+          >
+            <div style="max-width: 300px">
+              <h3 class="text-white fs-5 font-headline fw-bold mb-1">Visualization is Key</h3>
+              <p class="text-white text-opacity-75 small mb-0">
+                Users who name their goals and set specific target dates are 42% more likely to save
+                consistently.
+              </p>
             </div>
+          </div>
         </div>
 
         <!-- Actions -->
         <div class="d-flex flex-column flex-md-row align-items-center gap-3">
-            <button type="button" onclick="window.location.href='index.html'" class="btn bg-jewel text-white font-headline fw-bold rounded-3 py-3 px-5 shadow-sm w-100 w-md-auto">
-                Create Goal
-            </button>
-            <button type="button" onclick="window.location.href='index.html'" class="btn btn-link text-primary-custom font-headline fw-bold text-decoration-none py-3 px-5 w-100 w-md-auto">
-                Back to Dashboard
-            </button>
+          <button
+            type="button"
+            onclick="window.location.href = 'index.html'"
+            class="btn bg-jewel text-white font-headline fw-bold rounded-3 py-3 px-5 shadow-sm w-100 w-md-auto"
+          >
+            Create Goal
+          </button>
+          <button
+            type="button"
+            onclick="window.location.href = 'index.html'"
+            class="btn btn-link text-primary-custom font-headline fw-bold text-decoration-none py-3 px-5 w-100 w-md-auto"
+          >
+            Back to Dashboard
+          </button>
         </div>
-    </form>
-</main>
+      </form>
+    </main>
 
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>

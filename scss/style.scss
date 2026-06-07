@@ -1,14 +1,38 @@
-@charset "UTF-8";
+// ==========================================
+// ID 07: Uso de SCSS com Variáveis e Mixins
+// ==========================================
+
+// Variáveis de Cores
+$color-primary: #004f45;
+$color-secondary: #006a62;
+$color-danger: #ba1a1a;
+$color-bg: #f8f9fa;
+$color-surface-lowest: #ffffff;
+$color-surface-low: #f3f4f5;
+$color-surface-high: #e7e8e9;
+
+// Variáveis de Fontes
+$font-body: 'Inter', sans-serif;
+$font-headline: 'Manrope', sans-serif;
+
+// Mixin
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+// Injetando no CSS nativo para manter compatibilidade com as classes existentes
 :root {
-  --bs-primary: #004f45;
-  --bs-secondary: #006a62;
-  --bs-danger: #ba1a1a;
-  --bs-body-bg: #f8f9fa;
-  --bs-body-font-family: Inter, sans-serif;
-  --headline-font: Manrope, sans-serif;
-  --surface-container-low: #f3f4f5;
-  --surface-container-lowest: #ffffff;
-  --surface-container-high: #e7e8e9;
+  --bs-primary: #{$color-primary};
+  --bs-secondary: #{$color-secondary};
+  --bs-danger: #{$color-danger};
+  --bs-body-bg: #{$color-bg};
+  --bs-body-font-family: #{$font-body};
+  --headline-font: #{$font-headline};
+  --surface-container-low: #{$color-surface-low};
+  --surface-container-lowest: #{$color-surface-lowest};
+  --surface-container-high: #{$color-surface-high};
 }
 
 body {
@@ -27,7 +51,11 @@ h6,
   font-family: var(--headline-font);
 }
 
+// ==========================================
+// ID 08: Tipografia Fluida com Clamp()
+// ==========================================
 .display-3 {
+  // A fonte terá no mínimo 2.5rem, escalando fluidamente (5vw) até um máximo de 4rem
   font-size: clamp(2.5rem, 5vw, 4rem) !important;
 }
 
@@ -39,6 +67,10 @@ h6,
   font-size: clamp(1.2rem, 3vw, 1.75rem) !important;
 }
 
+// ==========================================
+// ID 03: CSS Puro (Grid Layout & Flexbox)
+// ==========================================
+
 /* Exemplo de Flexbox Puro para alinhamentos customizados */
 .custom-flex-header {
   display: flex;
@@ -46,9 +78,8 @@ h6,
   gap: 1rem;
   padding-bottom: 1rem;
   border-bottom: 2px solid #e7e8e9;
-}
-@media (min-width: 768px) {
-  .custom-flex-header {
+
+  @media (min-width: 768px) {
     flex-direction: row;
     align-items: center;
     justify-content: space-between;
@@ -58,6 +89,7 @@ h6,
 /* Exemplo de CSS Grid Puro para substituir o grid do framework onde for necessário provar o ID 03 */
 .custom-grid-cards {
   display: grid;
+  // Cria colunas fluidas e automáticas que nunca ficam menores que 280px
   grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
   gap: 1.5rem;
   margin-top: 1.5rem;
@@ -65,7 +97,11 @@ h6,
 
 /* Utilitários já presentes no arquivo CSS do projeto */
 .material-symbols-outlined {
-  font-variation-settings: "FILL" 0, "wght" 400, "GRAD" 0, "opsz" 24;
+  font-variation-settings:
+    'FILL' 0,
+    'wght' 400,
+    'GRAD' 0,
+    'opsz' 24;
   vertical-align: middle;
 }
 
@@ -81,15 +117,12 @@ h6,
 .text-primary-custom {
   color: var(--bs-primary);
 }
-
 .text-secondary-custom {
   color: var(--bs-secondary);
 }
-
 .bg-surface-lowest {
   background-color: var(--surface-container-lowest);
 }
-
 .bg-surface-low {
   background-color: var(--surface-container-low);
 }
@@ -99,11 +132,8 @@ h6,
   box-shadow: none;
   border-color: var(--bs-primary);
 }
-
 .form-control-custom {
   background-color: var(--surface-container-lowest);
   border: none;
   padding: 1rem;
 }
-
-/*# sourceMappingURL=style.css.map */

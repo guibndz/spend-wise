@@ -1,176 +1,248 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" data-bs-theme="light">
-<head>
-    <meta charset="utf-8"/>
-    <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>SpendWise | Login</title>
-    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap" rel="stylesheet"/>
-    <link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+    <link href="node_modules/bootstrap/dist/css/bootstrap.min.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;600;700;800&family=Inter:wght@400;500;600&display=swap"
+      rel="stylesheet"
+    />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap"
+      rel="stylesheet"
+    />
     <style>
-        :root {
-            --bs-primary: #004f45;
-            --bs-primary-rgb: 0, 79, 69;
-            --bs-secondary: #006a62;
-            --bs-danger: #ba1a1a;
-            --bs-body-bg: #f8f9fa;
-            --bs-body-font-family: 'Inter', sans-serif;
-            --headline-font: 'Manrope', sans-serif;
-            --surface-container-low: #f3f4f5;
-            --surface-container-lowest: #ffffff;
-            --surface-container-high: #e7e8e9;
-        }
-        body {
-            background-color: var(--bs-body-bg);
-            color: #191c1d;
-            font-family: var(--bs-body-font-family);
-        }
-        h1, h2, h3, h4, h5, h6, .font-headline {
-            font-family: var(--headline-font);
-        }
-        .material-symbols-outlined {
-            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
-            vertical-align: middle;
-        }
-        .bg-jewel {
-            background: linear-gradient(135deg, #004f45 0%, #00695c 100%);
-        }
-        .text-primary-custom { color: var(--bs-primary); }
-        .text-secondary-custom { color: var(--bs-secondary); }
-        .bg-surface-lowest { background-color: var(--surface-container-lowest); }
-        .bg-surface-low { background-color: var(--surface-container-low); }
-        .bg-surface-high { background-color: var(--surface-container-high); }
-        
-        .min-vh-100 { min-height: 100vh; }
+      :root {
+        --bs-primary: #004f45;
+        --bs-primary-rgb: 0, 79, 69;
+        --bs-secondary: #006a62;
+        --bs-danger: #ba1a1a;
+        --bs-body-bg: #f8f9fa;
+        --bs-body-font-family: 'Inter', sans-serif;
+        --headline-font: 'Manrope', sans-serif;
+        --surface-container-low: #f3f4f5;
+        --surface-container-lowest: #ffffff;
+        --surface-container-high: #e7e8e9;
+      }
+      body {
+        background-color: var(--bs-body-bg);
+        color: #191c1d;
+        font-family: var(--bs-body-font-family);
+      }
+      h1,
+      h2,
+      h3,
+      h4,
+      h5,
+      h6,
+      .font-headline {
+        font-family: var(--headline-font);
+      }
+      .material-symbols-outlined {
+        font-variation-settings:
+          'FILL' 0,
+          'wght' 400,
+          'GRAD' 0,
+          'opsz' 24;
+        vertical-align: middle;
+      }
+      .bg-jewel {
+        background: linear-gradient(135deg, #004f45 0%, #00695c 100%);
+      }
+      .text-primary-custom {
+        color: var(--bs-primary);
+      }
+      .text-secondary-custom {
+        color: var(--bs-secondary);
+      }
+      .bg-surface-lowest {
+        background-color: var(--surface-container-lowest);
+      }
+      .bg-surface-low {
+        background-color: var(--surface-container-low);
+      }
+      .bg-surface-high {
+        background-color: var(--surface-container-high);
+      }
+
+      .min-vh-100 {
+        min-height: 100vh;
+      }
+      .hero-section {
+        background-color: var(--bs-body-bg);
+        position: relative;
+        overflow: hidden;
+      }
+      .form-section {
+        background-color: var(--surface-container-lowest);
+      }
+      @media (max-width: 768px) {
         .hero-section {
-            background-color: var(--bs-body-bg);
-            position: relative;
-            overflow: hidden;
+          display: none !important;
         }
         .form-section {
-            background-color: var(--surface-container-lowest);
+          background-color: var(--surface-container-low);
         }
-        @media (max-width: 768px) {
-            .hero-section { display: none !important; }
-            .form-section { background-color: var(--surface-container-low); }
-        }
-        .input-group-text.bg-surface-lowest {
-            border-right: 0;
-            background-color: var(--surface-container-lowest);
-        }
-        .form-control.bg-surface-lowest {
-            border-left: 0;
-            background-color: var(--surface-container-lowest);
-        }
-        .form-control:focus {
-            box-shadow: none;
-            border-color: var(--bs-primary);
-        }
-        .input-group:focus-within {
-            box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
-            border-radius: 0.375rem;
-        }
-        .input-group:focus-within .input-group-text,
-        .input-group:focus-within .form-control {
-            border-color: var(--bs-primary);
-        }
+      }
+      .input-group-text.bg-surface-lowest {
+        border-right: 0;
+        background-color: var(--surface-container-lowest);
+      }
+      .form-control.bg-surface-lowest {
+        border-left: 0;
+        background-color: var(--surface-container-lowest);
+      }
+      .form-control:focus {
+        box-shadow: none;
+        border-color: var(--bs-primary);
+      }
+      .input-group:focus-within {
+        box-shadow: 0 0 0 0.25rem rgba(var(--bs-primary-rgb), 0.25);
+        border-radius: 0.375rem;
+      }
+      .input-group:focus-within .input-group-text,
+      .input-group:focus-within .form-control {
+        border-color: var(--bs-primary);
+      }
     </style>
-</head>
-<body>
-
-<main class="container-fluid p-0">
-    <div class="row g-0 min-vh-100">
+  </head>
+  <body>
+    <main class="container-fluid p-0">
+      <div class="row g-0 min-vh-100">
         <!-- Left Side: Editorial -->
-        <div class="col-md-6 hero-section d-flex flex-column justify-content-center align-items-start px-5 px-lg-5">
-            <div class="z-1 px-lg-5">
-                <div class="mb-5">
-                    <span class="font-headline fw-bolder fs-3 text-primary-custom">SpendWise</span>
-                </div>
-                <h1 class="display-4 font-headline fw-bolder text-primary-custom mb-4" style="line-height: 1.1;">
-                    Manage your finances with clarity and ease.
-                </h1>
-                <p class="fs-5 text-muted mb-5">
-                    The digital private bank designed for those who value precision and peace of mind in their financial journey.
-                </p>
-                
-                <div class="row g-3 mt-4">
-                    <div class="col-6">
-                        <div class="p-4 rounded-4 bg-surface-low d-flex flex-column gap-2">
-                            <span class="material-symbols-outlined text-primary-custom fs-1">account_balance_wallet</span>
-                            <span class="font-headline fw-bold text-primary-custom">Wealth Tracking</span>
-                        </div>
-                    </div>
-                    <div class="col-6">
-                        <div class="p-4 rounded-4 bg-surface-low d-flex flex-column gap-2">
-                            <span class="material-symbols-outlined text-primary-custom fs-1">insights</span>
-                            <span class="font-headline fw-bold text-primary-custom">Smart Analytics</span>
-                        </div>
-                    </div>
-                </div>
+        <div
+          class="col-md-6 hero-section d-flex flex-column justify-content-center align-items-start px-5 px-lg-5"
+        >
+          <div class="z-1 px-lg-5">
+            <div class="mb-5">
+              <span class="font-headline fw-bolder fs-3 text-primary-custom">SpendWise</span>
             </div>
+            <h1
+              class="display-4 font-headline fw-bolder text-primary-custom mb-4"
+              style="line-height: 1.1"
+            >
+              Manage your finances with clarity and ease.
+            </h1>
+            <p class="fs-5 text-muted mb-5">
+              The digital private bank designed for those who value precision and peace of mind in
+              their financial journey.
+            </p>
+
+            <div class="row g-3 mt-4">
+              <div class="col-6">
+                <div class="p-4 rounded-4 bg-surface-low d-flex flex-column gap-2">
+                  <span class="material-symbols-outlined text-primary-custom fs-1"
+                    >account_balance_wallet</span
+                  >
+                  <span class="font-headline fw-bold text-primary-custom">Wealth Tracking</span>
+                </div>
+              </div>
+              <div class="col-6">
+                <div class="p-4 rounded-4 bg-surface-low d-flex flex-column gap-2">
+                  <span class="material-symbols-outlined text-primary-custom fs-1">insights</span>
+                  <span class="font-headline fw-bold text-primary-custom">Smart Analytics</span>
+                </div>
+              </div>
+            </div>
+          </div>
         </div>
 
         <!-- Right Side: Form -->
-        <div class="col-md-6 form-section d-flex align-items-center justify-content-center p-4 p-md-5">
-            <div class="w-100" style="max-width: 400px;">
-                <div class="mb-4 d-md-none">
-                    <span class="font-headline fw-bolder fs-3 text-primary-custom">SpendWise</span>
-                </div>
-                <div class="mb-5">
-                    <h2 class="font-headline fw-bold fs-2 mb-2">Welcome back</h2>
-                    <p class="text-muted small">Secure access to your private dashboard</p>
-                </div>
-                
-                <form action="index.html">
-                    <div class="mb-4">
-                        <label for="cpf" class="form-label small fw-medium text-muted ms-1 mb-1">CPF</label>
-                        <div class="input-group">
-                            <span class="input-group-text bg-surface-lowest text-muted border-secondary-subtle">
-                                <span class="material-symbols-outlined fs-5">fingerprint</span>
-                            </span>
-                            <input type="text" class="form-control bg-surface-lowest border-secondary-subtle py-2" id="cpf" placeholder="000.000.000-00">
-                        </div>
-                    </div>
-                    <div class="mb-4">
-                        <div class="d-flex justify-content-between align-items-center mb-1 ms-1">
-                            <label for="password" class="form-label small fw-medium text-muted mb-0">Password</label>
-                            <a href="#" class="small text-primary-custom text-decoration-none fw-medium">Forgot password?</a>
-                        </div>
-                        <div class="input-group">
-                            <span class="input-group-text bg-surface-lowest text-muted border-secondary-subtle">
-                                <span class="material-symbols-outlined fs-5">lock</span>
-                            </span>
-                            <input type="password" class="form-control bg-surface-lowest border-secondary-subtle py-2" id="password" placeholder="••••••••">
-                        </div>
-                    </div>
-                    
-                    <button type="button" onclick="window.location.href='index.html'" class="btn w-100 bg-jewel text-white py-3 rounded-3 font-headline fw-bold shadow-sm mt-2 mb-4 hover-opacity">
-                        Login to Dashboard
-                    </button>
-                </form>
-
-                <div class="d-flex align-items-center gap-3 my-4">
-                    <hr class="flex-grow-1">
-                    <span class="small text-muted text-uppercase fw-bold" style="letter-spacing: 2px;">or</span>
-                    <hr class="flex-grow-1">
-                </div>
-
-                <div class="text-center">
-                    <p class="text-muted mb-3">New to our private banking experience?</p>
-                    <a href="signup.html" class="btn w-100 bg-surface-high text-dark py-2 rounded-3 font-headline fw-bold">
-                        Create an account
-                    </a>
-                </div>
-
-                <div class="mt-5 pt-3 d-flex align-items-center justify-content-center gap-2 text-muted">
-                    <span class="material-symbols-outlined fs-6">verified_user</span>
-                    <span style="font-size: 10px; letter-spacing: 2px;" class="text-uppercase fw-bold">End-to-End Encryption</span>
-                </div>
+        <div
+          class="col-md-6 form-section d-flex align-items-center justify-content-center p-4 p-md-5"
+        >
+          <div class="w-100" style="max-width: 400px">
+            <div class="mb-4 d-md-none">
+              <span class="font-headline fw-bolder fs-3 text-primary-custom">SpendWise</span>
             </div>
-        </div>
-    </div>
-</main>
+            <div class="mb-5">
+              <h2 class="font-headline fw-bold fs-2 mb-2">Welcome back</h2>
+              <p class="text-muted small">Secure access to your private dashboard</p>
+            </div>
 
-<script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
-</body>
+            <form action="index.html">
+              <div class="mb-4">
+                <label for="cpf" class="form-label small fw-medium text-muted ms-1 mb-1">CPF</label>
+                <div class="input-group">
+                  <span
+                    class="input-group-text bg-surface-lowest text-muted border-secondary-subtle"
+                  >
+                    <span class="material-symbols-outlined fs-5">fingerprint</span>
+                  </span>
+                  <input
+                    type="text"
+                    class="form-control bg-surface-lowest border-secondary-subtle py-2"
+                    id="cpf"
+                    placeholder="000.000.000-00"
+                  />
+                </div>
+              </div>
+              <div class="mb-4">
+                <div class="d-flex justify-content-between align-items-center mb-1 ms-1">
+                  <label for="password" class="form-label small fw-medium text-muted mb-0"
+                    >Password</label
+                  >
+                  <a href="#" class="small text-primary-custom text-decoration-none fw-medium"
+                    >Forgot password?</a
+                  >
+                </div>
+                <div class="input-group">
+                  <span
+                    class="input-group-text bg-surface-lowest text-muted border-secondary-subtle"
+                  >
+                    <span class="material-symbols-outlined fs-5">lock</span>
+                  </span>
+                  <input
+                    type="password"
+                    class="form-control bg-surface-lowest border-secondary-subtle py-2"
+                    id="password"
+                    placeholder="••••••••"
+                  />
+                </div>
+              </div>
+
+              <button
+                type="button"
+                onclick="window.location.href = 'index.html'"
+                class="btn w-100 bg-jewel text-white py-3 rounded-3 font-headline fw-bold shadow-sm mt-2 mb-4 hover-opacity"
+              >
+                Login to Dashboard
+              </button>
+            </form>
+
+            <div class="d-flex align-items-center gap-3 my-4">
+              <hr class="flex-grow-1" />
+              <span class="small text-muted text-uppercase fw-bold" style="letter-spacing: 2px"
+                >or</span
+              >
+              <hr class="flex-grow-1" />
+            </div>
+
+            <div class="text-center">
+              <p class="text-muted mb-3">New to our private banking experience?</p>
+              <a
+                href="signup.html"
+                class="btn w-100 bg-surface-high text-dark py-2 rounded-3 font-headline fw-bold"
+              >
+                Create an account
+              </a>
+            </div>
+
+            <div
+              class="mt-5 pt-3 d-flex align-items-center justify-content-center gap-2 text-muted"
+            >
+              <span class="material-symbols-outlined fs-6">verified_user</span>
+              <span style="font-size: 10px; letter-spacing: 2px" class="text-uppercase fw-bold"
+                >End-to-End Encryption</span
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="node_modules/bootstrap/dist/js/bootstrap.bundle.min.js"></script>
+  </body>
 </html>
