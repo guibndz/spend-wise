@@ -144,19 +144,25 @@
             </h3>
             <div class="d-flex flex-column gap-2">
               <button
-                class="btn btn-primary d-flex justify-content-between align-items-center rounded-3 bg-opacity-10 text-primary-custom border-0 fw-bold py-2"
+                id="filter-all"
+                data-filter="ALL"
+                class="filter-btn btn btn-primary d-flex justify-content-between align-items-center rounded-3 bg-opacity-10 text-primary-custom border-0 fw-bold py-2"
               >
                 <span>All Transactions</span>
                 <span class="material-symbols-outlined fs-6">filter_list</span>
               </button>
               <button
-                class="btn btn-light d-flex justify-content-between align-items-center rounded-3 bg-surface-low text-dark border-0 fw-medium py-2"
+                id="filter-income"
+                data-filter="RECEITA"
+                class="filter-btn btn btn-light d-flex justify-content-between align-items-center rounded-3 bg-surface-low text-dark border-0 fw-medium py-2"
               >
                 <span>Income</span>
                 <span class="material-symbols-outlined fs-6 text-success">arrow_upward</span>
               </button>
               <button
-                class="btn btn-light d-flex justify-content-between align-items-center rounded-3 bg-surface-low text-dark border-0 fw-medium py-2"
+                id="filter-expense"
+                data-filter="DESPESA"
+                class="filter-btn btn btn-light d-flex justify-content-between align-items-center rounded-3 bg-surface-low text-dark border-0 fw-medium py-2"
               >
                 <span>Expenses</span>
                 <span class="material-symbols-outlined fs-6 text-danger">arrow_downward</span>

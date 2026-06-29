@@ -74,7 +74,49 @@ $(document).ready(function () {
     tbody.html(`<tr><td colspan="4" class="text-center ${classe} py-5">${mensagem}</td></tr>`)
   }
 
-  // Carrega e renderiza as transações do usuário logado.
+  // Guarda as transações já ordenadas e com o saldo corrente pré-calculado,
+  // para que o filtro apenas selecione quais linhas exibir.
+  let transacoesProcessadas = []
+
+  // Renderiza a tabela aplicando o filtro de tipo: 'ALL', 'RECEITA' ou 'DESPESA'.
+  function renderizar(filtro) {
+    const visiveis =
+      filtro === 'ALL'
+        ? transacoesProcessadas
+        : transacoesProcessadas.filter((t) => t.tipo === filtro)
+
+    if (!visiveis.length) {
+      countLabel.text('Nenhuma transação encontrada')
+      renderizarMensagem('Nenhuma transação para este filtro.')
+      return
+    }
+
+    // Exibe da mais recente para a mais antiga (o saldo já vem pré-calculado).
+    tbody.html(
+      [...visiveis]
+        .reverse()
+        .map((t) => montarLinha(t, t.saldoCorrente))
+        .join('')
+    )
+    countLabel.text(`Exibindo ${visiveis.length} transações`)
+  }
+
+  // Ativa visualmente o botão de filtro selecionado.
+  function ativarBotao(botao) {
+    $('.filter-btn')
+      .removeClass('btn-primary bg-opacity-10 text-primary-custom fw-bold')
+      .addClass('btn-light bg-surface-low text-dark fw-medium')
+    $(botao)
+      .removeClass('btn-light bg-surface-low text-dark fw-medium')
+      .addClass('btn-primary bg-opacity-10 text-primary-custom fw-bold')
+  }
+
+  $('.filter-btn').on('click', function () {
+    ativarBotao(this)
+    renderizar($(this).data('filter'))
+  })
+
+  // Carrega as transações do usuário logado e dispara a primeira renderização.
   async function carregarTransacoes() {
     const usuario = JSON.parse(localStorage.getItem('loggedUser') || '{}')
     const usuarioId = usuario.id || '1'
@@ -88,25 +130,17 @@ $(document).ready(function () {
         return
       }
 
-      // Ordena da mais antiga para a mais recente para calcular o saldo corrente.
-      const ordenadas = [...transacoes].sort((a, b) =>
-        `${a.data} ${a.hora}`.localeCompare(`${b.data} ${b.hora}`)
-      )
-
+      // Ordena da mais antiga para a mais recente e calcula o saldo corrente,
+      // anexando-o a cada transação para que o filtro não o recalcule.
       let saldo = 0
-      const linhas = ordenadas.map((t) => {
-        saldo += t.tipo === 'RECEITA' ? Number(t.valor) : -Number(t.valor)
-        return { html: montarLinha(t, saldo) }
-      })
+      transacoesProcessadas = [...transacoes]
+        .sort((a, b) => `${a.data} ${a.hora}`.localeCompare(`${b.data} ${b.hora}`))
+        .map((t) => {
+          saldo += t.tipo === 'RECEITA' ? Number(t.valor) : -Number(t.valor)
+          return { ...t, saldoCorrente: saldo }
+        })
 
-      // Exibe da mais recente para a mais antiga.
-      tbody.html(
-        linhas
-          .map((l) => l.html)
-          .reverse()
-          .join('')
-      )
-      countLabel.text(`Exibindo ${transacoes.length} transações`)
+      renderizar('ALL')
     } catch (error) {
       countLabel.text('Erro ao carregar')
       renderizarMensagem(error.message, 'text-danger')
