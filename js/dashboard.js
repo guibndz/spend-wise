@@ -52,5 +52,28 @@ $(document).ready(function () {
     }
   }
 
+  // Critério ÚNICO de cor por progresso, compartilhado entre "Savings Goals"
+  // e "Spending by Category": verde quando saudável (longe do limite),
+  // amarelo ao se aproximar e vermelho quando alto/excedido.
+  function corDeProgresso(percentual) {
+    if (percentual > 80) return 'bg-danger'
+    if (percentual > 50) return 'bg-warning'
+    return 'bg-success'
+  }
+
+  // Conecta a cor de cada barra ao dado real (o próprio percentual = width),
+  // substituindo as cores hardcoded sem lógica.
+  function padronizarBarrasDeProgresso() {
+    $('.progress-bar').each(function () {
+      const percentual = parseFloat(this.style.width) || 0
+      $(this)
+        .removeClass(
+          'bg-primary bg-secondary bg-warning bg-danger bg-success text-bg-secondary opacity-50'
+        )
+        .addClass(corDeProgresso(percentual))
+    })
+  }
+
   carregarResumo()
+  padronizarBarrasDeProgresso()
 })

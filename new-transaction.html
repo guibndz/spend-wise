@@ -214,28 +214,34 @@
               style="letter-spacing: 1px"
               >Category</label
             >
+            <!-- Categoria selecionada (preenchida pelos botões abaixo) -->
+            <input type="hidden" id="category" value="Dining" />
             <div class="d-flex flex-wrap gap-2">
               <button
                 type="button"
-                class="btn btn-secondary bg-opacity-10 text-secondary border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
+                data-category="Dining"
+                class="category-btn btn bg-jewel text-white border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
               >
                 <span class="material-symbols-outlined fs-6">restaurant</span> Dining
               </button>
               <button
                 type="button"
-                class="btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
+                data-category="Shopping"
+                class="category-btn btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
               >
                 <span class="material-symbols-outlined fs-6">shopping_bag</span> Shopping
               </button>
               <button
                 type="button"
-                class="btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
+                data-category="Transport"
+                class="category-btn btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
               >
                 <span class="material-symbols-outlined fs-6">directions_car</span> Transport
               </button>
               <button
                 type="button"
-                class="btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
+                data-category="Other"
+                class="category-btn btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
               >
                 <span class="material-symbols-outlined fs-6">more_horiz</span> Other
               </button>

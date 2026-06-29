@@ -29,6 +29,22 @@ $(document).ready(function () {
   $('#btn-expense').on('click', () => selecionarTipo('DESPESA'))
   $('#btn-income').on('click', () => selecionarTipo('RECEITA'))
 
+  // --- Seleção de categoria ---
+  const categoryInput = $('#category')
+
+  function selecionarCategoria(botao) {
+    // Reseta todos para o estado inativo e destaca o selecionado (preenchido).
+    $('.category-btn')
+      .removeClass('bg-jewel text-white')
+      .addClass('btn-light bg-surface-low text-muted')
+    $(botao).removeClass('btn-light bg-surface-low text-muted').addClass('bg-jewel text-white')
+    categoryInput.val($(botao).data('category'))
+  }
+
+  $('.category-btn').on('click', function () {
+    selecionarCategoria(this)
+  })
+
   // --- Helpers de feedback ---
   function limparFeedback() {
     feedback.addClass('d-none').removeClass('alert alert-success alert-danger').empty()
@@ -81,13 +97,15 @@ $(document).ready(function () {
     const usuario = JSON.parse(localStorage.getItem('loggedUser') || '{}')
     const usuarioId = usuario.id || '1'
 
-    // Monta o objeto conforme o modelo de dados (docs/spec.md).
+    // Monta o objeto conforme o modelo de dados (docs/spec.md), incluindo a
+    // categoria selecionada.
     const transacao = {
       tipo,
       valor,
       data,
       hora: new Date().toTimeString().slice(0, 8),
       descricao,
+      categoria: categoryInput.val(),
     }
 
     // --- Envio assíncrono via serviço POST ---
