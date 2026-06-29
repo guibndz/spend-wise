@@ -29,21 +29,8 @@ $(document).ready(function () {
   $('#btn-expense').on('click', () => selecionarTipo('DESPESA'))
   $('#btn-income').on('click', () => selecionarTipo('RECEITA'))
 
-  // --- Seleção de categoria ---
+  // ID 13: a categoria é coletada por um <select>, lido no envio do formulário.
   const categoryInput = $('#category')
-
-  function selecionarCategoria(botao) {
-    // Reseta todos para o estado inativo e destaca o selecionado (preenchido).
-    $('.category-btn')
-      .removeClass('bg-jewel text-white')
-      .addClass('btn-light bg-surface-low text-muted')
-    $(botao).removeClass('btn-light bg-surface-low text-muted').addClass('bg-jewel text-white')
-    categoryInput.val($(botao).data('category'))
-  }
-
-  $('.category-btn').on('click', function () {
-    selecionarCategoria(this)
-  })
 
   // --- Helpers de feedback ---
   function limparFeedback() {

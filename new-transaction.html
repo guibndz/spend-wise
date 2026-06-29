@@ -207,45 +207,22 @@
             </div>
           </div>
 
-          <!-- Category -->
+          <!-- Category (ID 13: elemento de seleção <select> para coleta de dados) -->
           <div class="mb-4">
             <label
+              for="category"
               class="form-label small fw-bold text-muted text-uppercase mb-2 ms-1"
               style="letter-spacing: 1px"
               >Category</label
             >
-            <!-- Categoria selecionada (preenchida pelos botões abaixo) -->
-            <input type="hidden" id="category" value="Dining" />
-            <div class="d-flex flex-wrap gap-2">
-              <button
-                type="button"
-                data-category="Dining"
-                class="category-btn btn bg-jewel text-white border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
-              >
-                <span class="material-symbols-outlined fs-6">restaurant</span> Dining
-              </button>
-              <button
-                type="button"
-                data-category="Shopping"
-                class="category-btn btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
-              >
-                <span class="material-symbols-outlined fs-6">shopping_bag</span> Shopping
-              </button>
-              <button
-                type="button"
-                data-category="Transport"
-                class="category-btn btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
-              >
-                <span class="material-symbols-outlined fs-6">directions_car</span> Transport
-              </button>
-              <button
-                type="button"
-                data-category="Other"
-                class="category-btn btn btn-light bg-surface-low text-muted border-0 rounded-pill font-headline fw-bold small d-flex align-items-center gap-1 px-3 py-2"
-              >
-                <span class="material-symbols-outlined fs-6">more_horiz</span> Other
-              </button>
-            </div>
+            <select id="category" class="form-select form-control-custom rounded-3">
+              <option value="Dining">Dining</option>
+              <option value="Shopping">Shopping</option>
+              <option value="Transport">Transport</option>
+              <option value="Bills">Bills</option>
+              <option value="Salary">Salary</option>
+              <option value="Other">Other</option>
+            </select>
           </div>
 
           <hr class="my-4 opacity-25" />
