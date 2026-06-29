@@ -1,8 +1,7 @@
 // IDs 22 e 23: Camada de serviço para requisições assíncronas à API fake
 // (JSON Server) — envio (POST) e leitura (GET) de dados.
 
-// URL base da API local. Inicie o servidor com: npm run api
-const API_BASE_URL = 'http://localhost:3001'
+const API_BASE_URL = 'https://my-json-server.typicode.com/guibndz/spend-wise'
 
 /**
  * Função assíncrona dedicada a enviar dados ao JSON Server via método POST.

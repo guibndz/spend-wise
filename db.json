@@ -87,6 +87,26 @@
       "descricao": "Gorjeta",
       "usuarioId": "1",
       "id": "gz0qLTr"
+    },
+    {
+      "tipo": "RECEITA",
+      "valor": 50,
+      "data": "2026-06-29",
+      "hora": "22:42:18",
+      "descricao": "gorjeta",
+      "categoria": "Bills",
+      "usuarioId": "1",
+      "id": "gfGGt2e"
+    },
+    {
+      "tipo": "DESPESA",
+      "valor": 6,
+      "data": "2026-06-29",
+      "hora": "23:17:00",
+      "descricao": "Onibus",
+      "categoria": "Transport",
+      "usuarioId": "1",
+      "id": "dR7PcbM"
     }
   ]
 }
