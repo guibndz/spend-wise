@@ -8,6 +8,7 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
+    "api": "json-server --watch db.json --port 3001",
     "build:css": "sass scss/style.scss style.css",
     "format": "prettier --write \"**/*.{html,css,scss,js}\"",
     "lint": "eslint \"**/*.js\""
@@ -31,6 +32,7 @@
   "devDependencies": {
     "eslint": "^10.4.1",
     "gh-pages": "^6.3.0",
+    "json-server": "^0.17.4",
     "prettier": "^3.8.3",
     "sass": "^1.100.0"
   }
